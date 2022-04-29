@@ -1,13 +1,13 @@
+from re import I
 import turtle as t
-import os
-from curses import window
+# from curses import window
 from turtle import left, right, width
 playerAscore = 0
 playerBscore = 0
 
-window=t.Screen()
+window = t.Screen()
 window.title("Ping Game")
-window.bgcolor("green")
+window.bgcolor("black")
 window.setup(width=800,height=600)
 window.tracer(0)
 
@@ -18,7 +18,7 @@ leftpaddle.shape("square")
 leftpaddle.color("white")
 leftpaddle.shapesize(stretch_wid=5,stretch_len=1)
 leftpaddle.penup()
-leftpaddle.goto(-350,0)
+leftpaddle.goto(350,0)
 
 
 #creating right paddle
@@ -93,8 +93,8 @@ while True:
     ball.setx(ball.xcor()+ballxdirection)
     ball.sety(ball.ycor()+ballydirection)
 
+#settingup border
 
-    #settingup border
 if ball.ycor()>290:
     ball.sety(290)
     ballydirection=ballydirection*-1
@@ -112,15 +112,15 @@ if ball.xcor()>390:
 
      #collisions
 
-    #  if (ball.xcor()>340)and(ball.xcor()<350)and(ball.ycor()<rightpaddle.ycor()+40 and ball.ycor()>rightpaddle.ycor()-40)
-    #      ball.setx(340)
-    #      ballxdirection=ballxdirection*-1 
+if (ball.xcor()>340)and(ball.xcor()<350)and(ball.ycor()<rightpaddle.ycor()+40 and ball.ycor()>rightpaddle.ycor()-40):
+    ball.setx(340)
+    ballxdirection=ballxdirection*-1 
          
-    #  if (ball.xcor()>340)and(ball.xcor()<350)and(ball.ycor()<leftpaddle.ycor()+40 and ball.ycor()>leftpaddle.ycor()-40)
-    #      ball.setx(340)
-    #      ballxdirection=ballxdirection*-1 
+if (ball.xcor()>340)and(ball.xcor()<350)and(ball.ycor()<leftpaddle.ycor()+40 and ball.ycor()>leftpaddle.ycor()-40):
+    ball.setx(340)
+    ballxdirection=ballxdirection*-1 
 
-         
+             
 
 
 
